@@ -8,21 +8,21 @@ import { getUserById } from "@/lib/actions/user.actions";
 import { getImageById } from "@/lib/actions/image.actions";
 
 const Page = async ({ params: { id } }: SearchParamProps) => {
-  const { userId } = auth();
+  // const { userId } = auth();
 
-  if (!userId) redirect("/sign-in");
+  // if (!userId) redirect("/sign-in");
 
-  const user = await getUserById(userId);
-  const image = await getImageById(id);
+  // const user = await getUserById(userId);
+  // const image = await getImageById(id);
 
-  const transformation =
-    transformationTypes[image.transformationType as TransformationTypeKey];
+  // const transformation =
+  //   transformationTypes[image.transformationType as TransformationTypeKey];
 
   return (
     <>
-      <Header title={transformation.title} subtitle={transformation.subTitle} />
+      <Header title="Update" subtitle="Lora" />
 
-      <section className="mt-10">
+      {/* <section className="mt-10">
         <TransformationForm
           action="Update"
           userId={user._id}
@@ -31,7 +31,7 @@ const Page = async ({ params: { id } }: SearchParamProps) => {
           config={image.config}
           data={image}
         />
-      </section>
+      </section> */}
     </>
   );
 };
